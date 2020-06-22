@@ -1,4 +1,5 @@
 def quick_sort(arr, left, right):
+
     # left, right가 교차되버리면 종료
     if left > right:
         return
