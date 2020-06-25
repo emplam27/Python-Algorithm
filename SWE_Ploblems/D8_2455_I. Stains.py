@@ -5,8 +5,34 @@ sys.stdin = open("input.txt", "r")
 ''' 
 백트레킹을 진행하는데, 얼룩이 있는 곳만 찾아서 재귀함수를 들어간다.
 모든 얼룩을 지웠을 때, 사용한 도구의 갯수의 최솟값을 구한다.
+
+1. 각 샐을 백트레킹 하면서 진행해봄
+모든 메트리스를 검사하며 지나가기 때문에 시간이 오래걸림. 테스트케이스 하나도 통과를 못함
+얼룩만을 순회하며 지워보면 어떨까 생각함
 '''
 
+
+for t in range(1, int(input()) + 1):
+
+    N, M = map(int, input().split())
+    C = int(input())
+
+    stains, cleaned = list(), dict()  # 방문배열로 dict사용
+    for _ in range(C):
+        r, c = map(int, input().split())
+        stains.append([r, c])
+        cleaned[(r, c)] = 0
+
+
+
+
+    min_result = float('inf')
+
+    print('#{} {}'.format(t, min_result))
+
+
+'''
+1. 백트레킹
 
 def cleaning(previous_n, previous_m, left_stain, result):
     global min_result
@@ -53,3 +79,5 @@ for t in range(1, int(input()) + 1):
     min_result = float('inf')
     cleaning(1, 1, len(stains), 0)
     print('#{} {}'.format(t, min_result))
+
+'''
