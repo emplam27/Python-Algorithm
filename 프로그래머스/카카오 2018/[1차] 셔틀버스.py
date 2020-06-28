@@ -16,6 +16,7 @@ def shuttletime(n, t):
         shuttle[i] = 540 + i * t
     return shuttle
 
+
 def check(time, crew, shuttle, m):
     arr = [0] + [i for i in crew]
 
@@ -48,10 +49,7 @@ def check(time, crew, shuttle, m):
         return time
 
 
-
-
 def solution(n, t, m, timetable):
-
     crew = sorted(crewtime(timetable))
     shuttle = shuttletime(n, t)
 
@@ -74,6 +72,5 @@ def solution(n, t, m, timetable):
         tmp = check(i, crew, shuttle, m)
         if tmp != None and tmp > max_result:
             max_result = tmp
-
 
     return min2time(max_result)
