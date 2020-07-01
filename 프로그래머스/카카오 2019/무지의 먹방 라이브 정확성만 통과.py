@@ -13,7 +13,7 @@ def find_index(index, food_times):
 
 def solution(food_times, k):
     time, index = 0, len(food_times)
-    index, foodtimes = find_index(index, food_times)
+    index, food_times = find_index(index, food_times)
 
     while time < k:
 
