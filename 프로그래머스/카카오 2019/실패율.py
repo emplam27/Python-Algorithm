@@ -1,3 +1,8 @@
+"""
+2중 for문을 사용하지 않아야 시간복잡도가 줄어든다.
+lambda sorted가 필요하다.
+"""
+
 def solution(N, stages):
     answer = []
     # [도달했으나 클리어 못한사람 수, 도달한 사람 수]
