@@ -1,24 +1,17 @@
 def check_visited(n, weak, weak_idx, dist_value, weak_visited):
-
-    origin_weak_value = weak[weak_idx]
-    weak_visited[weak_idx] = 1
+    time = 0
+    weak_value = weak[weak_idx]
     visited_index = []
-
-    for _ in range(len(weak)):
-        weak_idx += 1
-        if weak_idx < len(weak):
-            if not weak_visited[weak_idx] and weak[weak_idx] <= origin_weak_value + dist_value:
-                weak_visited[weak_idx] = 1
-                visited_index.append(weak_idx)
-            else:
-                break
-        else:
-            if not weak_visited[weak_idx - len(weak)] and weak[weak_idx - len(weak)] <= origin_weak_value + dist_value - (n - 1):
-                weak_visited[weak_idx - len(weak)] = 1
-                visited_index.append(weak_idx - len(weak))
-            else:
-                break
-
+    while time <= dist_value:
+        if weak_value in weak:
+            tmp_index = weak.index(weak_value)
+            if weak_visited[tmp_index] == 0:
+                weak_visited[tmp_index] = 1
+                visited_index.append(tmp_index)
+        weak_value += 1
+        if weak_value == n:
+            weak_value = 0
+        time += 1
     return weak_visited, visited_index
 
 
@@ -50,11 +43,8 @@ def check_outside(n, weak, dist, min_result, weak_visited, dist_selected):
 def solution(n, weak, dist):
     weak_visited = [0] * len(weak)
     dist_selected = [0] * len(dist)
-    min_result = check_outside(n, weak, dist, len(dist) + 1, weak_visited, dist_selected)
-    if min_result == len(dist) + 1:
-        return -1
-    else:
-        return min_result
+    return check_outside(n, weak, dist, len(dist), weak_visited, dist_selected)
+
 
 print(solution(12, [1, 5, 6, 10], [1, 2, 3, 4]))
 print(solution(12, [1, 3, 4, 9, 10], [3, 5, 7]))
