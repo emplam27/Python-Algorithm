@@ -82,9 +82,9 @@ def solution(board):
 
         # 로봇의 방향에 따른 회전이동
         if direction == 1:
-            direction = 2
+            change_direction = 2
         else:
-            direction = 1
+            change_direction = 1
 
         for moving, pivot in enumerate([1, 0]):  # 기준점
             for rotate in [0, 1]:  # 시계방향, 반시계방향
@@ -95,16 +95,18 @@ def solution(board):
                 ]
 
                 # 회전
-                if 0 <= check_point[0] < n and 0 <= check_point[1] < n and not board[check_point[0]][check_point[1]]:
+                if 0 <= check_point[0] < n and 0 <= check_point[1] < n \
+                        and not board[check_point[0]][check_point[1]]\
+                        and not visited[check_point[0]][check_point[1]]:
                     if pivot == rotate:
                         change_position = [check_point, position[1]]
                         visited[check_point[0]][check_point[1]] = 1
-                        move_robot(change_position, direction, result + 1)
+                        move_robot(change_position, change_direction, result + 1)
                         visited[check_point[0]][check_point[1]] = 0
                     else:
                         change_position = [position[0], check_point]
                         visited[check_point[0]][check_point[1]] = 1
-                        move_robot(change_position, direction, result + 1)
+                        move_robot(change_position, change_direction, result + 1)
                         visited[check_point[0]][check_point[1]] = 0
 
     n = len(board)
