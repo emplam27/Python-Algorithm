@@ -19,14 +19,16 @@ def solution(relations):
             # 최소성 만족여부 확인
             is_unique = True
             for used in used_list:
-                selected = 0
-                for j in used:
-                    if j in combi_elem:
-                        selected += 1
-                        continue
-                if selected == len(used):  # 최소성을 벗어나면
-                    is_unique = False
-                    break
+                if is_unique:
+                    selected = 0
+                    for j in used:
+                        if j in combi_elem:
+                            selected += 1
+                            continue
+                    if selected == len(used):  # 최소성을 벗어나면
+                        is_unique = False
+                        break
+
             if is_unique:
                 # relation의 combi_elem 컬럼을 추가하며 검사
                 check_key = dict()
