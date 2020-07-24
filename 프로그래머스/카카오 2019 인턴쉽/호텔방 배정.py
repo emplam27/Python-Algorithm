@@ -13,6 +13,7 @@ def solution(k, room_number):
     for i in range(1, k + 1):
         candidate_dict[i] = 0
 
+    print(candidate_numbers)
     print(candidate_dict)
     # room_dict = dict()
     # for number in room_number:
