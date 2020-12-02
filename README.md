@@ -13,3 +13,11 @@
 | n차원 배열 문제들   | [구슬탈출2](https://github.com/emplam27/python_algorithm/blob/master/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80_13460_%EA%B5%AC%EC%8A%AC%ED%83%88%EC%B6%9C2.py) |
 | 그래프              |                                                              |
 
+
+
+
+
+### 작성규칙
+
+1. 주석을 활용하여 최대한 자세히 설명을 남긴다.
+2. 풀이에 사용된 시간을 명시한다. 
