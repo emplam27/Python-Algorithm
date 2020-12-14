@@ -2,48 +2,42 @@ import sys
 
 sys.stdin = open('input.txt', 'r')
 
-import sys
+
+# 힙정렬 구현
+# 1. 힙이 아닌 배열을 힙으로 만들어주기
+# 2. 힙의 루트(가장 큰 수)를 꺼내서 배열의 가장 마지막에 넣어주기
+# 3. 남은 배열을 다시 힙으로 구성하기
+# 4, 2번, 3번 반복하여 큰수에서부터 정렬하기
+
+def heap_sort(nums):
+
+    def make_heap(array, index, heap_size):
+        root_index = index
+        left_index = 2 * root_index + 1
+        right_index = 2 * root_index + 2
+
+        if left_index < heap_size and array[left_index] > array[root_index]:
+            root_index = left_index
+        if right_index < heap_size and array[right_index] > array[root_index]:
+            root_index = right_index
+        if root_index != index:
+            array[root_index], array[index] = array[index], array[root_index]
+            make_heap(array, root_index, heap_size)
+
+    for i in range((N - 1) // 2, -1, -1):
+        make_heap(nums, i, N)
+
+    for i in range(N - 1, 0, -1):
+        nums[0], nums[i] = nums[i], nums[0]
+        make_heap(nums, 0, i)
 
 
-# def merge_sort(arr):
-#
-#     if len(arr) <= 2:
-#         if len(arr) == 2:
-#             if arr[0] > arr[1]:
-#                 arr[0], arr[1] = arr[1], arr[0]
-#         return arr
-#
-#     arr_1 = merge_sort(arr[:len(arr) // 2])
-#     arr_2 = merge_sort(arr[len(arr) // 2:])
-#
-#     new_arr = []
-#     while arr_1 and arr_2:
-#         if arr_1[0] < arr_2[0]:
-#             new_arr.append(arr_1.pop(0))
-#         else:
-#             new_arr.append(arr_2.pop(0))
-#     if arr_1:
-#         new_arr.extend(arr_1)
-#     else:
-#         new_arr.extend(arr_2)
-#
-#     return new_arr
-#
-#
-# N = int(sys.stdin.readline())
-# nums = [int(sys.stdin.readline()) for _ in range(N)]
-# nums = merge_sort(nums)
-# for i in nums:
-#     print(i)
-
-
-N = int(sys.stdin.readline())
-nums = [0] * 10001
+r = sys.stdin.readline
+N, nums = int(r()), []
 for _ in range(N):
-    nums[int(sys.stdin.readline())] += 1
+    nums.append(int(r()))
 
-for index, value in enumerate(nums):
-    if value:
-        for _ in range(value):
-            print(index)
+heap_sort(nums)
 
+for num in nums:
+    print(num)
