@@ -12,17 +12,17 @@ sys.stdin = open('input.txt', 'r')
 def heap_sort(nums):
 
     def make_heap(array, index, heap_size):
-        root_index = index
-        left_index = 2 * root_index + 1
-        right_index = 2 * root_index + 2
+        parent = index
+        left_child = 2 * parent + 1
+        right_child = 2 * parent + 2
 
-        if left_index < heap_size and array[left_index] > array[root_index]:
-            root_index = left_index
-        if right_index < heap_size and array[right_index] > array[root_index]:
-            root_index = right_index
-        if root_index != index:
-            array[root_index], array[index] = array[index], array[root_index]
-            make_heap(array, root_index, heap_size)
+        if left_child < heap_size and array[left_child] > array[parent]:
+            parent = left_child
+        if right_child < heap_size and array[right_child] > array[parent]:
+            parent = right_child
+        if parent != index:
+            array[parent], array[index] = array[index], array[parent]
+            make_heap(array, parent, heap_size)
 
     for i in range((N - 1) // 2, -1, -1):
         make_heap(nums, i, N)
