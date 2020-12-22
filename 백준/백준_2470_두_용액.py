@@ -4,47 +4,31 @@ sys.stdin = open('input.txt', 'r')
 read = sys.stdin.readline
 
 '''
-이분탐색으로 찾아야 하는건 '두 특성값 합의 절댓값이 최소가 되는 특성값'
-
+찾아야 하는건 두 특성값 합의 절댓값이 최소가 되는 특성 값이며, 목표값은 0
+투포인터를 사용하여 양쪽 끝 값을 더해가면서 최솟값이 되었는가 확인
+더한 값이 음수이면 start += 1
+더한 값이 양수이면 end -= 1
+start == end 까지 반복
 '''
 
 N = int(read())
-liquids = sorted(map(int, read().split()))
-min_diff, result = float('inf'), []
+solution = sorted(list(map(int, read().split())))
 
-for liquid in liquids:
+start, end = 0, N - 1
+min_result = float('inf')
+result = [0, 0]
 
-    # 이분 탐색으로 찾아야 하는 값과 유사한 값의 index 찾기
-    left, right = 0, N - 1
-    mid = (left + right) // 2
-    while left <= right and 0 <= mid < N:
-        current_props = liquids[mid]
+while start != end:
+    mix = solution[start] + solution[end]
+    if abs(mix) < abs(min_result):
+        min_result = mix
+        result = solution[start], solution[end]
 
-        if min_diff > abs(liquid + liquids[mid]):
-            result = [liquid, liquids[mid]]
-            min_diff = abs(liquid + liquids[mid])
-
-            if liquid > 0:
-                if abs(liquid) < abs(liquids[mid]):
-                    mid += 1
-                else:
-                    mid -= 1
-            else:
-                if abs(liquid) < abs(liquids[mid]):
-                    mid -= 1
-                else:
-                    mid += 1
-
-        else:
-            if liquid > 0:
-                if abs(liquid) < abs(liquids[mid]):
-                    mid = (mid + 1 + right) // 2
-                else:
-                    mid = (left + mid - 1) // 2
-            else:
-                if abs(liquid) < abs(liquids[mid]):
-                    mid = (left + mid - 1) // 2
-                else:
-                    mid = (mid + 1 + right) // 2
+    if mix == 0:
+        break
+    elif mix < 0:
+        start += 1
+    else:
+        end -= 1
 
 print(*result)
