@@ -10,3 +10,5 @@ points = [list(map(int, read().rstrip().split())) for _ in range(n)]
 print(points)
 
 
+
+
