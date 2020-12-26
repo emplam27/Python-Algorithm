@@ -3,6 +3,10 @@ import sys
 sys.stdin = open('input.txt', 'r')
 read = sys.stdin.readline
 
+'''
+아스키코드 변경 후 리스트로 방문배열 확인
+'''
+
 
 def DFS(r, c, count):
     global max_count
