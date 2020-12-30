@@ -10,7 +10,7 @@ read = sys.stdin.readline
 N = int(read().rstrip())
 M = int(read().rstrip())
 graph = dict()
-# [현재 나를 가리키고 있는 부품의 수 int, 내가 가리키고 있는 부품들 set, 나를 만들기 위해 필요한 부품정보 dict]
+# [현재 나를 가리키고 있는 부품의 수(진입차수) int, 내가 가리키고 있는 부품들 set, 나를 만들기 위해 필요한 부품정보 dict]
 for _ in range(M):
     bigger, smaller, count = map(int, read().rstrip().split())
     # 작은 부품 정보 갱신
@@ -28,7 +28,7 @@ while len(graph) > 1:
         if not value[0]:
             for node in value[1]:
                 graph[node][0] -= 1
-                # # 해당 부품을 구성하는 부품들의 정보를 넘겨줌
+                # 현재 부품이 가리키고 있는 부품들은 해당 부품을 몇 개 필요로 하는지 확인하고, 해당 부품을 구성하는 부품 목록을 곱하여 넘겨줌
                 if value[2]:
                     require_count = graph[node][2][key]
                     for part_key, part_value in value[2].items():
