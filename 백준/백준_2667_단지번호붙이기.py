@@ -1,15 +1,6 @@
 import sys
 
-sys.stdin = open("2667_input.txt", "r")
-
-N = int(input())
-
-arr = [list(map(int, list(input()))) for _ in range(N)]
-visited = [[0] * N for _ in range(N)]
-
-dy = [-1, 0, 1, 0]
-dx = [0, 1, 0, -1]
-aps = []
+sys.stdin = open("input.txt", "r")
 
 
 def dfs(r, c):
@@ -22,6 +13,12 @@ def dfs(r, c):
             dfs(nr, nc)
     return len(num)
 
+
+N = int(input())
+arr = [list(map(int, list(input()))) for _ in range(N)]
+visited = [[0] * N for _ in range(N)]
+dy, dx = [-1, 0, 1, 0], [0, 1, 0, -1]
+aps = []
 
 for i in range(N):
     for j in range(N):
