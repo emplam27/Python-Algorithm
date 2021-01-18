@@ -29,16 +29,17 @@
 |                 | [동전 2](https://github.com/emplam27/python_algorithm/blob/master/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80_2294_%EB%8F%99%EC%A0%84_2.py) | [BOJ - 2294](https://www.acmicpc.net/problem/2294)           |                     |
 | **위상정렬**    | [장난감 조립](https://github.com/emplam27/python_algorithm/blob/master/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80_2637_%EC%9E%A5%EB%82%9C%EA%B0%90_%EC%A1%B0%EB%A6%BD.py) | [BOJ - 2637](https://www.acmicpc.net/problem/2637)           | Queue방식           |
 | **그래프**      | [트리의 지름](https://github.com/emplam27/python_algorithm/blob/master/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80_1967_%ED%8A%B8%EB%A6%AC%EC%9D%98_%EC%A7%80%EB%A6%84.py) | [BOJ - 1967](https://www.acmicpc.net/problem/1967)           | 트리의 지름         |
-| **DP**          | 01타일                                                       |                                                              | 자주나오는 문제     |
-|                 | LCS                                                          |                                                              | LCS                 |
-|                 | 평범한 배낭                                                  |                                                              | 유명한 DP문제 1     |
+| **DP**          | [01타일](https://github.com/emplam27/python_algorithm/blob/master/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80_1904_01%ED%83%80%EC%9D%BC.py) |                                                              | 자주나오는 문제     |
+|                 | [LCS](https://github.com/emplam27/python_algorithm/blob/master/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80_9251_LCS.py) |                                                              | LCS                 |
+|                 | [평범한 배낭](https://github.com/emplam27/python_algorithm/blob/master/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80_12865_%ED%8F%89%EB%B2%94%ED%95%9C_%EB%B0%B0%EB%82%AD.py) |                                                              | 유명한 DP문제 1     |
 |                 | 행렬 곱셈 순서                                               |                                                              |                     |
 |                 | 외판원 순회                                                  |                                                              | 유명한 DP문제 2     |
 |                 | 점프                                                         |                                                              |                     |
+|                 | 내리막 길                                                    |                                                              |                     |
 | **그리디**      | 회의실 배정                                                  |                                                              |                     |
 |                 | 신입사원                                                     |                                                              |                     |
 |                 | 멀티탭 스케쥴링                                              |                                                              |                     |
-|                 |                                                              |                                                              |                     |
+|                 | 보석 도둑                                                    |                                                              |                     |
 | **trie 구조**   | [자동완성](https://github.com/emplam27/python_algorithm/blob/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%B9%B4%EC%B9%B4%EC%98%A4%202018%20-%20%5B3%EC%B0%A8%5D%20%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1.py) | [Programmers](https://programmers.co.kr/learn/courses/30/lessons/17685) |                     |
 |                 | [가사검색](https://github.com/emplam27/python_algorithm/blob/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%B9%B4%EC%B9%B4%EC%98%A4%202020%20-%20%EA%B0%80%EC%82%AC%EA%B2%80%EC%83%89%20dict%20%ED%99%9C%EC%9A%A9.py) | [Programmers](https://programmers.co.kr/learn/courses/30/lessons/60060) |                     |
 | **순열조합**    |                                                              |                                                              |                     |
