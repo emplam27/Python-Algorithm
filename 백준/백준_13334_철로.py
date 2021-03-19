@@ -5,7 +5,7 @@ sys.stdin = open('input.txt', 'r')
 read = sys.stdin.readline
 
 '''
-모든 좌표들을 (작은좌표(A), 큰좌표(B)) 순서대로 바꿔준 뒤 정렬한다. 정렬할때 A를 기준으로 정렬한다.
+모든 좌표들을 (작은좌표(A), 큰좌표(B)) 순서대로 바꿔준 뒤 정렬한다. 정렬할때 큰좌표(B) 기준으로 정렬한다.
 
 이후 is_possible을 만들어 준다.
 is_possible은 최소힙. rails의 A부터 A + D 사이에 들어오는 location들이 저장한다.
