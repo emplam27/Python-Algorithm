@@ -9,6 +9,7 @@ test.py
 시간측정용.py
 출력하는 여러가지 방법.py
 (고정)_조합_순열.py
+.vscode/
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm,python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm,python,visualstudiocode
